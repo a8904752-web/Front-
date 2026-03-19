@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foryou | Thoughtfully Curated Lifestyle Essentials</title>
+    
+    <!-- Modern font stack for an 'expensive' feel -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:italic@400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --accent: #4f46e5;
+            --bg-base: #faf9f6; /* Off-white linen feel */
+        }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-base);
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif-italic { font-family: 'Instrument Serif', serif; }
+
+        /* Smooth glass effect for navigation */
+        .glass-nav {
+            background: rgba(250, 249, 246, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Subtle organic hover for product cards */
+        .product-image-container {
+            overflow: hidden;
+            border-radius: 2rem;
+            background: #f0eeeb;
+        }
+
+        .product-image {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.04);
+        }
+
+        /* Bento grid transitions */
+        .bento-item {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .bento-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Promotion Bar -->
+    <div class="bg-[#1a1a1a] text-[#efedea] py-2.5 px-6 overflow-hidden">
+        <div class="flex whitespace-nowrap animate-marquee text-[10px] font-bold tracking-[0.3em] uppercase justify-center">
+            <span>The Spring Editorial is here — Free shipping on orders over $200 — Limited Edition Drops Weekly</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-nav border-b border-black/5">
+        <div class="max-w-[1440px] mx-auto px-8 h-24 flex justify-between items-center">
+            <!-- Secondary Links -->
+            <div class="hidden lg:flex items-center space-x-10 text-[11px] font-bold uppercase tracking-widest text-black/60">
+                <a href="#" class="hover:text-black transition-colors">Shop</a>
+                <a href="#" class="hover:text-black transition-colors">Archive</a>
+                <a href="#" class="hover:text-black transition-colors">Journal</a>
+            </div>
+
+            <!-- Brand Identity -->
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a href="#" class="text-[28px] font-black tracking-[-0.04em] text-black">
+                    FORYOU<span class="text-indigo-600">.</span>
+                </a>
+            </div>
+
+            <!-- Utilities -->
+            <div class="flex items-center space-x-8">
+                <button class="text-black/70 hover:text-black transition-colors">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                </button>
+                <a href="#" class="relative text-black/70 hover:text-black transition-colors">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="absolute -top-1 -right-2 bg-indigo-600 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </a>
+                <button class="lg:hidden">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero: Editorial Focus -->
+        <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 z-10">
+                        <div class="inline-block border border-black/10 px-4 py-1.5 rounded-full mb-10">
+                            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-black/50">Volume 04 / Spring 2026</span>
+                        </div>
+                        <h1 class="text-7xl lg:text-[110px] font-extrabold tracking-[-0.05em] leading-[0.85] mb-10">
+                            The art of <br>
+                            <span class="serif-italic font-normal text-indigo-600">living</span> well.
+                        </h1>
+                        <p class="text-xl text-black/60 max-w-md mb-12 leading-relaxed font-medium">
+                            A curated selection of meaningful objects designed to elevate your daily rituals. From architectural apparel to high-fidelity sound.
+                        </p>
+                        <div class="flex items-center space-x-6">
+                            <a href="#featured" class="bg-black text-white px-12 py-6 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-indigo-600 transition-all shadow-2xl">
+                                Shop the Edit
+                            </a>
+                            <a href="#" class="text-sm font-bold tracking-widest uppercase border-b-2 border-black/10 pb-1 hover:border-black transition-all">
+                                Watch Film
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 relative">
+                        <!-- Creative Image Composition -->
+                        <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)]">
+                            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="Lifestyle" class="w-full aspect-[5/6] object-cover">
+                        </div>
+                        <!-- Decorative Float -->
+                        <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-indigo-100 rounded-full blur-[100px] -z-10 opacity-60"></div>
+                        <div class="absolute -top-10 -left-10 w-80 h-80 bg-orange-50 rounded-full blur-[100px] -z-10 opacity-60"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid: The Categories -->
+        <section class="py-24 bg-white">
+            <div class="max-w-[1440px] mx-auto px-8">
+                <div class="mb-16">
+                    <h2 class="text-sm font-black uppercase tracking-[0.3em] text-black/30 mb-4 text-center">Curated Collections</h2>
+                    <p class="text-3xl font-bold text-center">Shop by Intention</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-6 h-[1000px] md:h-[650px]">
+                    <!-- Large Primary Card -->
+                    <div class="md:col-span-3 md:row-span-2 relative group overflow-hidden rounded-[2.5rem] bento-item">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-1000" alt="Apparel">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-12 left-12 text-white">
+                            <h3 class="text-4xl font-bold mb-4 leading-tight">Architectural <br>Apparel</h3>
+                            <button class="bg-white text-black px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-indigo-600 hover:text-white transition-all">Explore</button>
+                        </div>
+                    </div>
+
+                    <!-- Medium Landscape -->
+                    <div class="md:col-span-3 relative group overflow-hidden rounded-[2.5rem] bento-item">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Footwear">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <div class="absolute bottom-10 left-10 text-white flex justify-between items-center w-[calc(100%-80px)]">
+                            <h3 class="text-2xl font-bold tracking-tight">Technical Footwear</h3>
+                            <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Two Small Squares -->
+                    <div class="md:col-span-1.5 relative group overflow-hidden rounded-[2.5rem] bg-[#efedea] bento-item flex items-center justify-center p-8">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute bottom-6 text-center">
+                            <p class="text-[10px] font-black uppercase tracking-widest text-black/40">Studio Edit</p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-1.5 relative group overflow-hidden rounded-[2.5rem] bg-indigo-50 bento-item flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <p class="serif-italic text-3xl text-indigo-900 mb-2 italic">Minimalist</p>
+                            <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400">Home Objects</p>
+                        </div>
+                        <div class="absolute inset-0 border-2 border-indigo-100/50 rounded-[2.5rem]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid: The Drops -->
+        <section id="featured" class="py-32 px-8 max-w-[1440px] mx-auto">
+            <div class="flex justify-between items-end mb-20">
+                <div>
+                    <h2 class="text-4xl font-extrabold tracking-tighter mb-4">Latest Arrivals</h2>
+                    <p class="text-black/50 font-medium">Limited quantities available. Once they're gone, they're archive.</p>
+                </div>
+                <div class="hidden sm:flex space-x-6 text-[11px] font-black uppercase tracking-widest text-black/40">
+                    <button class="text-black border-b-2 border-black pb-1">All</button>
+                    <button class="hover:text-black transition-colors">Tech</button>
+                    <button class="hover:text-black transition-colors">Wear</button>
+                    <button class="hover:text-black transition-colors">Living</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+                <!-- Item 1 -->
+                <div class="group product-card cursor-pointer">
+                    <div class="product-image-container aspect-[4/5] relative mb-8">
+                        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800&auto=format&fit=crop" class="product-image w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+                        <button class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white text-black py-4 rounded-2xl font-bold text-xs uppercase tracking-widest opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+                            Select Size
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg tracking-tight mb-1">Standard Weighted Tee</h3>
+                            <p class="text-black/40 text-sm mb-2">Heavyweight Organic Cotton</p>
+                            <p class="font-black text-indigo-600">$65.00</p>
+                        </div>
+                        <button class="p-2 text-black/20 hover:text-red-500 transition-colors">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group product-card cursor-pointer">
+                    <div class="product-image-container aspect-[4/5] relative mb-8">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop" class="product-image w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-black text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.2em]">New</span>
+                        </div>
+                        <button class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white text-black py-4 rounded-2xl font-bold text-xs uppercase tracking-widest opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+                            Add To Bag
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg tracking-tight mb-1">Studio One Headphones</h3>
+                            <p class="text-black/40 text-sm mb-2">Noise-Isolating Audio</p>
+                            <p class="font-black">$349.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group product-card cursor-pointer">
+                    <div class="product-image-container aspect-[4/5] relative mb-8">
+                        <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?q=80&w=800&auto=format&fit=crop" class="product-image w-full h-full object-cover">
+                        <button class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white text-black py-4 rounded-2xl font-bold text-xs uppercase tracking-widest opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+                            Add To Bag
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg tracking-tight mb-1">Commuter Tech Pack</h3>
+                            <p class="text-black/40 text-sm mb-2">Water-Resistant Shell</p>
+                            <p class="font-black">$185.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group product-card cursor-pointer">
+                    <div class="product-image-container aspect-[4/5] relative mb-8 bg-[#efedea]">
+                        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=800&auto=format&fit=crop" class="product-image w-full h-full object-cover mix-blend-darken">
+                        <button class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white text-black py-4 rounded-2xl font-bold text-xs uppercase tracking-widest opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+                            View Details
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-lg tracking-tight mb-1">Slate Analog Watch</h3>
+                            <p class="text-black/40 text-sm mb-2">Precision Movement</p>
+                            <p class="font-black">$220.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brand Philosphy -->
+        <section class="py-32 bg-[#1a1a1a] text-[#efedea]">
+            <div class="max-w-[1440px] mx-auto px-8 text-center">
+                <h2 class="serif-italic text-5xl lg:text-7xl mb-12">Quality isn't an act, it's a habit.</h2>
+                <div class="grid md:grid-cols-3 gap-16 max-w-5xl mx-auto">
+                    <div>
+                        <p class="text-xs font-black uppercase tracking-widest mb-6 text-indigo-400">01. Materials</p>
+                        <p class="text-lg opacity-60 leading-relaxed">We source only the finest sustainable materials, ensuring every piece lasts for generations, not seasons.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-black uppercase tracking-widest mb-6 text-indigo-400">02. Design</p>
+                        <p class="text-lg opacity-60 leading-relaxed">Our aesthetic is driven by function. If it doesn't serve a purpose, it doesn't make the cut.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-black uppercase tracking-widest mb-6 text-indigo-400">03. Ethos</p>
+                        <p class="text-lg opacity-60 leading-relaxed">Foryou was built on the belief that the things we own should reflect the people we want to be.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="py-32 bg-white">
+            <div class="max-w-4xl mx-auto px-8 text-center">
+                <div class="bg-indigo-50 rounded-[3rem] p-16 lg:p-24 relative overflow-hidden">
+                    <h2 class="text-4xl lg:text-5xl font-black tracking-tighter mb-8">Join the collective.</h2>
+                    <p class="text-lg text-black/50 mb-12 leading-relaxed">Get early access to drops and member-only editorial content. No spam, just substance.</p>
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-1 px-8 py-5 rounded-full border border-black/5 focus:outline-none focus:ring-4 focus:ring-indigo-100 transition-all font-medium">
+                        <button class="bg-black text-white px-10 py-5 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-indigo-600 transition-all">Subscribe</button>
+                    </form>
+                    <!-- Decorative Orbs -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-24 pb-12 px-8 border-t border-black/5">
+        <div class="max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-16 mb-24">
+                <div class="col-span-2">
+                    <a href="#" class="text-2xl font-black tracking-tighter mb-8 block">FORYOU.</a>
+                    <div class="flex space-x-6">
+                        <a href="#" class="opacity-40 hover:opacity-100 transition-opacity"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        <a href="#" class="opacity-40 hover:opacity-100 transition-opacity"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-8 text-black/30">Shop</h4>
+                    <ul class="space-y-4 text-sm font-semibold">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Everything</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Best Sellers</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Sale</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">New Releases</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-8 text-black/30">Support</h4>
+                    <ul class="space-y-4 text-sm font-semibold">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Order Tracking</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Returns</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Privacy</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] mb-8 text-black/30">Editorial</h4>
+                    <ul class="space-y-4 text-sm font-semibold">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">The Journal</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Sustainability</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Our Ethos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-black/30 gap-6">
+                <p>© 2026 FORYOU COLLECTIVE. LONDON / NYC.</p>
+                <div class="flex space-x-12">
+                    <a href="#" class="hover:text-black transition-colors">Cookie Settings</a>
+                    <a href="#" class="hover:text-black transition-colors">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
